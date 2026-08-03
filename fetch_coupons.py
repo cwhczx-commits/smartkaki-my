@@ -1,15 +1,15 @@
 """
-fetch_coupons.py
-=================
-从 Involve Asia Publisher API 拉取所有带优惠码(voucher_code)的 campaign，
-写入 coupons.json，供静态网页用 JS 直接读取。
+fetch_coupons.py (v2)
+======================
+主数据源: /offers/all (application_status=Approved) —— 你已确认有8条真实数据
+附加数据源: /campaigns/all (coupons_only=true) —— 允许为空，不影响主流程
 
-设计给 GitHub Actions 用:
-- 凭证从环境变量读取 (INVOLVE_ASIA_KEY / INVOLVE_ASIA_SECRET)，由 GitHub Secrets 注入
-- 每次跑都是全新进程，所以不需要处理"token过期"这种跨次调用的缓存问题，
-  一次认证用完这次运行就够了
-- 输出结构先保留API返回的原始字段 + 少量顶层元信息，
-  等你看到真实响应长什么样之后，再决定网页具体要用哪些字段做筛选/精简
+字段名策略:
+  官方文档没给响应体的具体字段名(只给了请求参数)，所以这里用"候选key列表，
+  取第一个存在且非空的"这种写法。跑完第一次之后，看 Actions 日志里打印的
+  "第一条offer的原始字段"，或者直接打开 coupons.json 里任意一条的 "_raw"，
+  对照真实字段名，去下面 FIELD_CANDIDATES 里调整/补充候选key即可，
+  不需要改其他逻辑。
 """
 
 import json
@@ -42,24 +42,57 @@ def request_with_backoff(method: str, endpoint: str, token: str, retries: int = 
     raise RuntimeError(f"请求失败，已重试 {retries} 次: {endpoint}")
 
 
-def fetch_all_coupon_campaigns(token: str, extra_filters: dict | None = None) -> list:
-    """分页拉完所有 coupons_only=true 的 campaign"""
+def fetch_all_pages(endpoint: str, token: str, data_template: dict) -> list:
+    """通用分页拉取: 循环直到 page*limit >= count"""
     rows = []
     page = 1
-    limit = 100  # /campaigns/all 的分页上限是100
     while True:
-        data = {"page": page, "limit": limit, "filters[coupons_only]": "true"}
-        if extra_filters:
-            for k, v in extra_filters.items():
-                data[f"filters[{k}]"] = v
-        resp = request_with_backoff("POST", "/campaigns/all", token, data=data)
+        data = dict(data_template)
+        data["page"] = page
+        resp = request_with_backoff("POST", endpoint, token, data=data)
         block = resp["data"]
         rows.extend(block["data"])
-        print(f"  第{page}页: 拉到{len(block['data'])}条, 累计{len(rows)}/{block['count']}")
         if page * block["limit"] >= block["count"]:
             break
         page += 1
     return rows
+
+
+# 候选字段名: 从左到右尝试，取第一个存在且非空的值
+FIELD_CANDIDATES = {
+    "id": ["offer_id", "id", "campaign_id"],
+    "name": ["offer_name", "name", "title", "campaign_name"],
+    "commission": ["commission", "commission_percent", "payout", "rate", "commission_rate"],
+    "country": ["offer_country", "country"],
+    "category": ["categories", "category"],
+    "image": ["offer_logo", "logo", "banner", "banner_image", "image", "image_url"],
+    "url": ["offer_url", "url", "landing_page", "tracking_link"],
+    "voucher_code": ["voucher_code", "coupon_code", "code"],
+    "end_date": ["end_date", "campaign_end_date", "expiry_date"],
+}
+
+
+def pick(row: dict, field: str):
+    for key in FIELD_CANDIDATES[field]:
+        if key in row and row[key]:
+            return row[key]
+    return None
+
+
+def normalize(row: dict, source: str) -> dict:
+    return {
+        "source": source,  # "offer" 或 "coupon"
+        "id": pick(row, "id"),
+        "name": pick(row, "name"),
+        "commission": pick(row, "commission"),
+        "country": pick(row, "country"),
+        "category": pick(row, "category"),
+        "image": pick(row, "image"),
+        "url": pick(row, "url"),
+        "voucher_code": pick(row, "voucher_code"),
+        "end_date": pick(row, "end_date"),
+        "_raw": row,  # 原始数据全保留，字段名对不上时来这里查真实key叫什么
+    }
 
 
 def main():
@@ -69,26 +102,43 @@ def main():
         print("缺少 INVOLVE_ASIA_KEY / INVOLVE_ASIA_SECRET 环境变量", file=sys.stderr)
         sys.exit(1)
 
-    # 你可以在这里加国家/分类过滤，例如只要马来西亚:
-    # extra_filters = {"country": "Malaysia"}
-    extra_filters = None
-
     print("正在认证...")
     token = authenticate(key, secret)
 
-    print("正在拉取优惠券 campaigns...")
-    coupons = fetch_all_coupon_campaigns(token, extra_filters)
+    print("正在拉取已批准的offers (主数据源)...")
+    offers = fetch_all_pages(
+        "/offers/all", token,
+        {"limit": 100, "filters[application_status]": "Approved"},
+    )
+    print(f"  拉到 {len(offers)} 条offer")
+    if offers:
+        print("  第一条offer的原始字段(调试用，字段名对不上时看这里):")
+        print(" ", json.dumps(offers[0], ensure_ascii=False)[:800])
+
+    print("正在拉取带优惠码的campaigns (附加数据源，允许为空)...")
+    try:
+        coupons = fetch_all_pages(
+            "/campaigns/all", token,
+            {"limit": 100, "filters[coupons_only]": "true"},
+        )
+    except Exception as e:
+        print(f"  campaigns拉取失败，忽略并继续跑主流程: {e}")
+        coupons = []
+    print(f"  拉到 {len(coupons)} 条coupon campaign")
+
+    deals = [normalize(o, "offer") for o in offers] + [normalize(c, "coupon") for c in coupons]
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "count": len(coupons),
-        "coupons": coupons,
+        "offer_count": len(offers),
+        "coupon_count": len(coupons),
+        "deals": deals,
     }
 
     with open("coupons.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"完成，写入 coupons.json，共 {len(coupons)} 条")
+    print(f"完成: {len(offers)} offers + {len(coupons)} coupons = {len(deals)} 条写入 coupons.json")
 
 
 if __name__ == "__main__":
