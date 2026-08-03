@@ -25,6 +25,44 @@ function formatUpdatedAt(iso) {
   });
 }
 
+// ---------------------------------------------------------------
+// Logo handling: we don't host or fabricate brand logos ourselves
+// (they're trademarked assets). Instead we pull each platform's own
+// public favicon from its domain — the same icon your browser tab
+// already shows — with a graceful fallback to a plain monogram tile
+// if a favicon is missing or fails to load.
+// ---------------------------------------------------------------
+
+function domainFromUrl(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch (e) {
+    return null;
+  }
+}
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+function logoTileHTML(deal, name) {
+  const initial = escapeHTML(name.charAt(0).toUpperCase());
+  const domain = domainFromUrl(deal.url);
+
+  if (!domain) {
+    return `<div class="deal-logo deal-logo-fallback">${initial}</div>`;
+  }
+
+  const favicon = `https://www.google.com/s2/favicons?sz=64&domain=${encodeURIComponent(domain)}`;
+  return `
+    <div class="deal-logo" data-fallback="${initial}">
+      <img src="${favicon}" alt="" loading="lazy"
+           onerror="this.parentElement.classList.add('deal-logo-fallback'); this.parentElement.textContent=this.parentElement.dataset.fallback; ">
+    </div>`;
+}
+
 function dealCardHTML(deal) {
   const name = cleanOfferName(deal.name);
   // Show a voucher code if one exists (future-proofed for when campaigns
@@ -37,6 +75,7 @@ function dealCardHTML(deal) {
 
   return `
     <article class="deal-card">
+      ${logoTileHTML(deal, name)}
       <p class="deal-platform">${name}</p>
       <p class="deal-title">${headline}</p>
       <p class="deal-code">${meta}</p>
