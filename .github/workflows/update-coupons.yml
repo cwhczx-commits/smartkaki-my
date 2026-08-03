@@ -1,0 +1,39 @@
+name: Update Coupons
+
+on:
+  schedule:
+    # UTC时间0点 = 马来西亚/新加坡时间早上8点。要改时间就调这里的小时数。
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}   # 允许你在Actions页面手动点按钮触发，方便测试
+
+permissions:
+  contents: write   # 需要写权限才能把更新后的 coupons.json 推回仓库
+
+jobs:
+  update-coupons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch latest coupons
+        env:
+          INVOLVE_ASIA_KEY: ${{ secrets.INVOLVE_ASIA_KEY }}
+          INVOLVE_ASIA_SECRET: ${{ secrets.INVOLVE_ASIA_SECRET }}
+        run: python fetch_coupons.py
+
+      - name: Commit and push if coupons.json changed
+        run: |
+          git config user.name "coupon-bot"
+          git config user.email "coupon-bot@users.noreply.github.com"
+          git add coupons.json
+          git diff --staged --quiet || git commit -m "chore: update coupons.json [automated]"
+          git push
