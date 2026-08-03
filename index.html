@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SmartKaki MY — Malaysia's Deal Aggregation Hub</title>
-<meta name="description" content="SmartKaki MY aggregates the latest official promo codes and deals from Shopee, Lazada, Foodpanda and more — all in one place.">
+<meta name="description" content="SmartKaki MY aggregates the latest official deals and cashback rates from Shopee, Lazada, TikTok Shop and more — all in one place.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,11 +35,11 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Malaysia · Deals &amp; Promo Codes</p>
+        <p class="eyebrow">Malaysia · Deals &amp; Cashback</p>
         <h1>Your <span>kaki</span> for finding real discounts.</h1>
         <p class="hero-sub">
-          One page. Every official promo code from Shopee, Lazada, Foodpanda and more —
-          updated daily, verified before it's posted.
+          One page. Every official deal and cashback rate from Shopee, Lazada and more —
+          updated daily, pulled straight from the source.
         </p>
         <div class="hero-actions">
           <a href="#deals" class="btn btn-primary">See today's deals</a>
@@ -75,14 +75,9 @@
   </section>
 
   <!-- TICKER -->
-  <div class="ticker" role="note" aria-label="Sample deals, replace with live data">
+  <div class="ticker" role="note" aria-label="Live deals, updated daily">
     <div class="ticker-track">
-      <span>DEMO · SHOPEE9.9 — RM9 off min spend RM40</span>
-      <span>DEMO · FPSYOK10 — RM10 off Foodpanda</span>
-      <span>DEMO · LAZFREESHIP — Free shipping storewide</span>
-      <span>DEMO · SHOPEE9.9 — RM9 off min spend RM40</span>
-      <span>DEMO · FPSYOK10 — RM10 off Foodpanda</span>
-      <span>DEMO · LAZFREESHIP — Free shipping storewide</span>
+      <span>Loading today's deals…</span>
     </div>
   </div>
 
@@ -90,37 +85,13 @@
   <section class="section" id="deals">
     <div class="wrap">
       <h2>Today's platforms</h2>
-      <p class="section-sub">Every code below links out to the official platform through our verified affiliate link.</p>
+      <p class="section-sub">Every link below goes straight to the official platform through our verified affiliate program.</p>
 
-      <div class="deal-grid">
-
-        <article class="deal-card">
-          <p class="deal-platform">Shopee Malaysia</p>
-          <p class="deal-title">RM9 off, min. spend RM40</p>
-          <p class="deal-code">Code: <strong>SAMPLE9</strong></p>
-          <a href="#" class="deal-link" data-platform="shopee">Get this deal →</a>
-        </article>
-
-        <article class="deal-card">
-          <p class="deal-platform">Lazada Malaysia</p>
-          <p class="deal-title">Free shipping, no min. spend</p>
-          <p class="deal-code">Code: <strong>SAMPLEFS</strong></p>
-          <a href="#" class="deal-link" data-platform="lazada">Get this deal →</a>
-        </article>
-
-        <article class="deal-card">
-          <p class="deal-platform">Foodpanda</p>
-          <p class="deal-title">RM10 off your next order</p>
-          <p class="deal-code">Code: <strong>SAMPLE10</strong></p>
-          <a href="#" class="deal-link" data-platform="foodpanda">Get this deal →</a>
-        </article>
-
+      <div class="deal-grid" id="deal-grid">
+        <p class="deal-empty">Loading today's deals…</p>
       </div>
 
-      <p class="deal-note">
-        These are placeholder cards — swap the code, title and link for each card once your
-        Involve Asia deep links are ready. See <code>script.js</code> for where the links plug in.
-      </p>
+      <p class="deal-note" id="deals-updated"></p>
     </div>
   </section>
 
@@ -132,17 +103,17 @@
         <div class="step">
           <p class="step-index">1</p>
           <p class="step-title">Browse</p>
-          <p class="step-body">Check the deals page or Telegram channel for today's live codes.</p>
+          <p class="step-body">Check the deals page or Telegram channel for today's live offers.</p>
         </div>
         <div class="step">
           <p class="step-index">2</p>
           <p class="step-title">Click</p>
-          <p class="step-body">Tap through — you land on the official Shopee, Lazada or Foodpanda page.</p>
+          <p class="step-body">Tap through — you land on the official Shopee, Lazada or TikTok Shop page.</p>
         </div>
         <div class="step">
           <p class="step-index">3</p>
           <p class="step-title">Save</p>
-          <p class="step-body">Apply the code at checkout. You save, we may earn a small commission at no extra cost to you.</p>
+          <p class="step-body">Shop as usual — any code or cashback is applied or tracked automatically. You don't pay extra, and we may earn a small commission.</p>
         </div>
       </div>
     </div>
@@ -153,7 +124,7 @@
     <div class="wrap tg-cta">
       <div>
         <h2>Never miss a drop</h2>
-        <p class="section-sub">We push the day's best codes straight to Telegram — no app to install.</p>
+        <p class="section-sub">We push the day's best offers straight to Telegram — no app to install.</p>
       </div>
       <a href="https://t.me/smartkakimy" target="_blank" rel="noopener" class="btn btn-primary">Join the channel</a>
     </div>
@@ -169,7 +140,7 @@
     <p class="footer-legal">
       SmartKaki MY is an independent deal-aggregation and referral platform. All promo codes,
       trademarks and offers belong to their respective brands. We are not affiliated with or
-      endorsed by Shopee, Lazada, Foodpanda or any listed merchant. Links may earn us an
+      endorsed by Shopee, Lazada, TikTok Shop or any listed merchant. Links may earn us an
       affiliate commission via Involve Asia at no extra cost to you.
     </p>
     <p class="footer-copy">&copy; <span id="year"></span> SmartKaki MY. Business registration details will be listed here once available.</p>
