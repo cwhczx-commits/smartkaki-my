@@ -1,19 +1,20 @@
 """
-fetch_coupons.py (v2)
+fetch_coupons.py (v3)
 ======================
-主数据源: /offers/all (application_status=Approved) —— 你已确认有8条真实数据
-附加数据源: /campaigns/all (coupons_only=true) —— 允许为空，不影响主流程
+根据真实API响应修正:
+  - country 字段真实名字是 countries (复数)
+  - commission 不是单值字段，而是 commissions: [{"标签": "1.96%"}, ...] 这种数组，
+    需要专门解析，取里面最大的百分比作为 "Up to X%" 展示
+  - _raw 里去掉了 description 那段几KB的HTML，改成一段纯文字 summary，
+    减小 coupons.json 体积
 
-字段名策略:
-  官方文档没给响应体的具体字段名(只给了请求参数)，所以这里用"候选key列表，
-  取第一个存在且非空的"这种写法。跑完第一次之后，看 Actions 日志里打印的
-  "第一条offer的原始字段"，或者直接打开 coupons.json 里任意一条的 "_raw"，
-  对照真实字段名，去下面 FIELD_CANDIDATES 里调整/补充候选key即可，
-  不需要改其他逻辑。
+主数据源: /offers/all (application_status=Approved)
+附加数据源: /campaigns/all (coupons_only=true)，允许为空
 """
 
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -43,7 +44,6 @@ def request_with_backoff(method: str, endpoint: str, token: str, retries: int = 
 
 
 def fetch_all_pages(endpoint: str, token: str, data_template: dict) -> list:
-    """通用分页拉取: 循环直到 page*limit >= count"""
     rows = []
     page = 1
     while True:
@@ -62,8 +62,7 @@ def fetch_all_pages(endpoint: str, token: str, data_template: dict) -> list:
 FIELD_CANDIDATES = {
     "id": ["offer_id", "id", "campaign_id"],
     "name": ["offer_name", "name", "title", "campaign_name"],
-    "commission": ["commission", "commission_percent", "payout", "rate", "commission_rate"],
-    "country": ["offer_country", "country"],
+    "country": ["offer_country", "country", "countries"],   # 实测: 真实字段是 countries
     "category": ["categories", "category"],
     "image": ["offer_logo", "logo", "banner", "banner_image", "image", "image_url"],
     "url": ["offer_url", "url", "landing_page", "tracking_link"],
@@ -79,19 +78,59 @@ def pick(row: dict, field: str):
     return None
 
 
+def extract_commission_display(row: dict) -> str | None:
+    """
+    commissions / special_commissions 是 [{"标签": "1.96%"}, ...] 这种数组。
+    取所有条目里出现过的最大百分比，格式化成 "Up to X%"。
+    注意: 这会取全部档位里的最高值(包括限量/品牌特殊档位)，不代表大部分订单
+    实际能拿到的比率——只是用来在网页上做一个吸引眼球的"最高可达"标签，
+    如果想要更保守/准确的数字，可以改成只取 commissions[0] 那个基础档位。
+    """
+    percents = []
+    fallback_text = None
+    for group_key in ("commissions", "special_commissions"):
+        for entry in row.get(group_key) or []:
+            if not isinstance(entry, dict):
+                continue
+            for _, value in entry.items():
+                value = str(value)
+                if fallback_text is None:
+                    fallback_text = value
+                percents.extend(float(p) for p in re.findall(r"(\d+(?:\.\d+)?)\s*%", value))
+    if percents:
+        return f"Up to {max(percents):g}%"
+    return fallback_text  # 比如纯flat-rate "Up to ¥16.50" 这种没有%号的情况
+
+
+def strip_html(html: str, max_len: int = 220) -> str:
+    """把HTML简介转成一小段纯文字摘要，给网页卡片用"""
+    if not html:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", html)
+    text = (text.replace("&nbsp;", " ").replace("&amp;", "&")
+                .replace("&rsquo;", "'").replace("&lsquo;", "'")
+                .replace("&ldquo;", '"').replace("&rdquo;", '"'))
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) > max_len:
+        text = text[:max_len].rsplit(" ", 1)[0] + "..."
+    return text
+
+
 def normalize(row: dict, source: str) -> dict:
+    raw_trimmed = {k: v for k, v in row.items() if k != "description"}
     return {
         "source": source,  # "offer" 或 "coupon"
         "id": pick(row, "id"),
         "name": pick(row, "name"),
-        "commission": pick(row, "commission"),
+        "commission": extract_commission_display(row),
         "country": pick(row, "country"),
         "category": pick(row, "category"),
         "image": pick(row, "image"),
         "url": pick(row, "url"),
         "voucher_code": pick(row, "voucher_code"),
         "end_date": pick(row, "end_date"),
-        "_raw": row,  # 原始数据全保留，字段名对不上时来这里查真实key叫什么
+        "summary": strip_html(row.get("description", "")),
+        "_raw": raw_trimmed,
     }
 
 
@@ -111,9 +150,6 @@ def main():
         {"limit": 100, "filters[application_status]": "Approved"},
     )
     print(f"  拉到 {len(offers)} 条offer")
-    if offers:
-        print("  第一条offer的原始字段(调试用，字段名对不上时看这里):")
-        print(" ", json.dumps(offers[0], ensure_ascii=False)[:800])
 
     print("正在拉取带优惠码的campaigns (附加数据源，允许为空)...")
     try:
@@ -127,6 +163,12 @@ def main():
     print(f"  拉到 {len(coupons)} 条coupon campaign")
 
     deals = [normalize(o, "offer") for o in offers] + [normalize(c, "coupon") for c in coupons]
+
+    # 调试预览: 打印前3条精简后的结果，方便在Actions日志里核对字段对不对
+    print("预览前几条 (调试用):")
+    for d in deals[:3]:
+        preview = {k: v for k, v in d.items() if k not in ("_raw", "summary")}
+        print(" ", json.dumps(preview, ensure_ascii=False))
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
