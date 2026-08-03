@@ -79,6 +79,13 @@ def send_telegram_message(token, chat_id, text):
         },
         timeout=15,
     )
+    if not resp.ok:
+        # Surface Telegram's own error description in the Actions log,
+        # e.g. "Forbidden: bot is not a member of the channel chat"
+        try:
+            print(f"Telegram API error: {resp.json()}", file=sys.stderr)
+        except ValueError:
+            print(f"Telegram API error (non-JSON): {resp.text}", file=sys.stderr)
     resp.raise_for_status()
     return resp.json()
 
@@ -89,6 +96,11 @@ def main():
     if not token or not chat_id:
         print("Missing TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID env vars", file=sys.stderr)
         sys.exit(1)
+
+    # Safe diagnostics — never prints the full token, just enough to catch
+    # an obviously wrong/stale secret (wrong length, stray whitespace, etc.)
+    print(f"chat_id received: {chat_id!r}")
+    print(f"token length: {len(token)}, last 6 chars: ...{token[-6:]}")
 
     deals, updated_at = load_deals()
     if not deals:
