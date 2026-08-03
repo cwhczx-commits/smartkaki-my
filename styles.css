@@ -106,6 +106,18 @@ h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px}
 .deal-note{margin-top:28px;font-size:.85rem;color:var(--ink-soft)}
 .deal-note code{background:#fff;border:1px solid var(--line);padding:1px 6px;border-radius:4px}
 
+/* Empty / error state for the deal grid (shown while loading, or if
+   coupons.json has nothing / fails to load) */
+.deal-empty{
+  grid-column:1/-1;
+  text-align:center;
+  color:var(--ink-soft);
+  padding:40px 20px;
+  border:1px dashed var(--line);
+  border-radius:var(--radius);
+  background:var(--card);
+}
+
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .step-index{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--mint)}
