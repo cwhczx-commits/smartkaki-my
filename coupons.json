@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-03T11:26:15.783213+00:00",
-  "offer_count": 8,
+  "updated_at": "2026-08-04T10:59:58.077172+00:00",
+  "offer_count": 15,
   "coupon_count": 0,
   "deals": [
     {
@@ -134,6 +134,89 @@
     },
     {
       "source": "offer",
+      "id": 4557,
+      "name": "Unipin Global - CPS",
+      "commission": "Up to 0.84%",
+      "country": "International",
+      "category": "Others",
+      "image": "https://img.involve.asia/ia_logo/4557_M0OPfPJh.png",
+      "url": "https://invl.me/aff_m?offer_id=103403&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "- UniPin is a leading digital entertainment enabler, offering a seamless platform for top-up services across various games and digital content. It provides users with fast, secure, and convenient solutions to recharge...",
+      "_raw": {
+        "offer_id": 4557,
+        "merchant_id": 103403,
+        "offer_name": "Unipin Global - CPS",
+        "preview_url": "https://www.unipin.com",
+        "is_require_approval": 1,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/4557_M0OPfPJh.png",
+        "lookup_value": "cps",
+        "validation_terms": 30,
+        "payment_terms": 60,
+        "datetime_updated": "2024-12-03 15:28:29",
+        "datetime_created": "2024-09-06 10:48:19",
+        "marketplace_store_offer": false,
+        "categories": "Others",
+        "countries": "International",
+        "commissions": [
+          {
+            "Successful Sale": "0.84%"
+          },
+          {
+            "UniPin Voucher/Reload UCs are non commissionable": "0%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=103403&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile",
+        "directory_page": "https://app.involve.asia/directory/unipin-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 4614,
+      "name": "Poney MY - CPS",
+      "commission": "Up to 3.5%",
+      "country": "Malaysia",
+      "category": "Others",
+      "image": "https://img.involve.asia/ia_logo/4148_3hUZwFit.jpg",
+      "url": "https://invl.me/aff_m?offer_id=103460&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "PONEY started in 1992, is now consider a leading children apparel retailer in Malaysia. We specialize in a wide range of comfortable and fashionable products for newborns, toddlers, and kids up to 12 years old. O ver...",
+      "_raw": {
+        "offer_id": 4614,
+        "merchant_id": 103460,
+        "offer_name": "Poney MY - CPS",
+        "preview_url": "https://poney.com.my/",
+        "is_require_approval": 0,
+        "currency": "MYR",
+        "logo": "https://img.involve.asia/ia_logo/4148_3hUZwFit.jpg",
+        "lookup_value": "cps",
+        "validation_terms": 30,
+        "payment_terms": 30,
+        "datetime_updated": "2025-06-09 16:49:42",
+        "datetime_created": "2024-11-25 10:15:36",
+        "marketplace_store_offer": false,
+        "categories": "Others",
+        "countries": "Malaysia",
+        "commissions": [
+          {
+            "Successful Sale": "3.5%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=103460&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile",
+        "directory_page": "https://app.involve.asia/directory/poney-malaysia-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
       "id": 4640,
       "name": "Lazada B2B (MY)- CPS",
       "commission": "Up to 2.4%",
@@ -170,6 +253,153 @@
         "commission_tracking": "real-time",
         "tracking_type": "desktop mobile ios android",
         "directory_page": "https://app.involve.asia/directory/lazada-b2b-malaysia-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 4651,
+      "name": "Xiaomi (MY) - CPS",
+      "commission": "Up to 2.8%",
+      "country": "Malaysia",
+      "category": "Electronics",
+      "image": "https://img.involve.asia/ia_logo/4651_DmoCogOW.png",
+      "url": "https://invl.me/aff_m?offer_id=103497&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "About the Brand Xiaomi is a global technology leader, bringing smart innovation to everyone. Available in over 100 countries and regions, it connects over 702.3 million monthly active users* and powers more than 904.6...",
+      "_raw": {
+        "offer_id": 4651,
+        "merchant_id": 103497,
+        "offer_name": "Xiaomi (MY) - CPS",
+        "preview_url": "https://www.mi.com/my/store",
+        "is_require_approval": 1,
+        "currency": "MYR",
+        "logo": "https://img.involve.asia/ia_logo/4651_DmoCogOW.png",
+        "lookup_value": "cps",
+        "validation_terms": 21,
+        "payment_terms": 45,
+        "datetime_updated": "2026-07-06 09:33:50",
+        "datetime_created": "2025-01-09 11:31:08",
+        "marketplace_store_offer": false,
+        "categories": "Electronics",
+        "countries": "Malaysia",
+        "commissions": [
+          {
+            "Lifestyle": "2.80%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=103497&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile",
+        "directory_page": "https://app.involve.asia/directory/xiaomi-malaysia-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 4666,
+      "name": "Traveloka SG - CPS",
+      "commission": "Up to 14%",
+      "country": "Singapore",
+      "category": "Travel",
+      "image": "https://img.involve.asia/ia_logo/4666_i66S5zNS.jpg",
+      "url": "https://invl.me/aff_m?offer_id=103512&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "Traveloka is Southeast Asia's leading travel platform, delivering world-class travel experiences &mdash; from flights and accommodations to curated travel activities and local attractions, making every journey...",
+      "_raw": {
+        "offer_id": 4666,
+        "merchant_id": 103512,
+        "offer_name": "Traveloka SG - CPS",
+        "preview_url": "https://www.traveloka.com/en-sg",
+        "is_require_approval": 0,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/4666_i66S5zNS.jpg",
+        "lookup_value": "cps",
+        "validation_terms": 14,
+        "payment_terms": 60,
+        "datetime_updated": "2026-07-31 17:13:26",
+        "datetime_created": "2025-02-10 11:13:56",
+        "marketplace_store_offer": false,
+        "categories": "Travel",
+        "countries": "Singapore",
+        "commissions": [
+          {
+            "Beauty and Spa, Food and Drinks, Cruise": "3.5%"
+          },
+          {
+            "Hotel, Car Rental, Airport Transfer": "4.9%"
+          },
+          {
+            "Domestic Flights": "0.7%"
+          },
+          {
+            "International Flights": "1.4%"
+          },
+          {
+            "Attractions and Tours": "2.8%"
+          },
+          {
+            "Participating esim (GoHub and BillionConnect)": "14%"
+          },
+          {
+            "Disneyland & USS Tickets": "0.7%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=103512&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile ios android",
+        "directory_page": "https://app.involve.asia/directory/traveloka-singapore-cps-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 4668,
+      "name": "Traveloka MY - CPS",
+      "commission": "Up to 3.47%",
+      "country": "Malaysia",
+      "category": "Travel",
+      "image": "https://img.involve.asia/ia_logo/4668_uwuCcHvC.jpg",
+      "url": "https://invl.me/aff_m?offer_id=103514&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "Traveloka is Southeast Asia's leading travel platform, delivering world-class travel experiences &mdash; from flights and accommodations to curated travel activities and local attractions, making every journey...",
+      "_raw": {
+        "offer_id": 4668,
+        "merchant_id": 103514,
+        "offer_name": "Traveloka MY - CPS",
+        "preview_url": "https://www.traveloka.com/ms-my",
+        "is_require_approval": 1,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/4668_uwuCcHvC.jpg",
+        "lookup_value": "cps",
+        "validation_terms": 15,
+        "payment_terms": 60,
+        "datetime_updated": "2026-08-01 00:02:01",
+        "datetime_created": "2025-02-10 11:20:02",
+        "marketplace_store_offer": false,
+        "categories": "Travel",
+        "countries": "Malaysia",
+        "commissions": [
+          {
+            "Domestic Flights": "0.31%"
+          },
+          {
+            "International Flights": "0.95%"
+          },
+          {
+            "Hotel": "3.47%"
+          },
+          {
+            "Activities": "3.47%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=103514&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile ios android",
+        "directory_page": "https://app.involve.asia/directory/traveloka-malaysia-cps-affiliate-program"
       }
     },
     {
@@ -345,6 +575,137 @@
         "commission_tracking": "real-time",
         "tracking_type": "desktop mobile ios android",
         "directory_page": "https://app.involve.asia/directory/shopee-malaysia-cps-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 5164,
+      "name": "Klook Travel - CPS",
+      "commission": "Up to 20%",
+      "country": "International",
+      "category": "Travel",
+      "image": "https://img.involve.asia/ia_logo/803_unjtmslX.png",
+      "url": "https://invl.me/aff_m?offer_id=104010&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "About the Brand Klook is a beacon for travellers, offering a simple way to discover activities, attractions, and things to do wherever they venture. From hopping aboard local transport to setting foot in world-renowned...",
+      "_raw": {
+        "offer_id": 5164,
+        "merchant_id": 104010,
+        "offer_name": "Klook Travel - CPS",
+        "preview_url": "https://www.klook.com/",
+        "is_require_approval": 1,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/803_unjtmslX.png",
+        "lookup_value": "cps",
+        "validation_terms": 30,
+        "payment_terms": 30,
+        "datetime_updated": "2026-08-01 00:02:05",
+        "datetime_created": "2026-06-10 18:27:28",
+        "marketplace_store_offer": false,
+        "categories": "Travel",
+        "countries": "International",
+        "commissions": [
+          {
+            "Unsuitable promo code redeemed": "0%"
+          },
+          {
+            "Attractions Pass (AP)": "5%"
+          },
+          {
+            "Tour & Sightseeing (OT)": "6%"
+          },
+          {
+            "Activities & Experiences (AE)": "6%"
+          },
+          {
+            "Transport & Wifi (LT)": "5%"
+          },
+          {
+            "Car Rentals (CR)": "5%"
+          },
+          {
+            "Hotel (HO)": "6%"
+          },
+          {
+            "Insurance (IR)": "5%"
+          },
+          {
+            "Attraction passes (AS)": "5%"
+          },
+          {
+            "Staycation (ST)": "5%"
+          },
+          {
+            "Special Activities (SP)": "2%"
+          },
+          {
+            "Klook Gift Card (EC)": "2%"
+          },
+          {
+            "Excluded Activities (EA)": "0%"
+          },
+          {
+            "Food & Dining (FB) - HK/MO users for domestic food coupons": "5%"
+          },
+          {
+            "Klook eSim": "20%"
+          },
+          {
+            "Universal Studios Japan Super Value Combo [AID 192375]": "6%"
+          },
+          {
+            "Global Trains (KR, JP, CN, EU) [AID 17136, 81022, 168765, 201665]": "3.5%"
+          },
+          {
+            "India-Origin [All Vertical, except Klook eSim & EA/SA]": "20%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=104010&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile ios android",
+        "directory_page": "https://app.involve.asia/directory/klook-cps-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 5167,
+      "name": "UOB Bank CASA code (MY) - CPA",
+      "commission": "MYR35.00",
+      "country": "Malaysia",
+      "category": "Finance",
+      "image": "https://img.involve.asia/ia_logo/5167_KgzZ357u.png",
+      "url": "https://invl.io/aff_m?offer_id=104013&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "About the Brand & Product UOB (Malaysia) is rated among the top banks in Malaysia with a long-term AAA rating from Ratings Agency of Malaysia. It has over seven decades of presence in the country, and operates 55...",
+      "_raw": {
+        "offer_id": 5167,
+        "merchant_id": 104013,
+        "offer_name": "UOB Bank CASA code (MY) - CPA",
+        "preview_url": "https://www.uob.com.my/personal/tmrw/detect-mobile-os.html",
+        "is_require_approval": 1,
+        "currency": "MYR",
+        "logo": "https://img.involve.asia/ia_logo/5167_KgzZ357u.png",
+        "lookup_value": "cpa",
+        "validation_terms": 30,
+        "payment_terms": 60,
+        "datetime_updated": "2026-06-23 17:13:20",
+        "datetime_created": "2026-06-18 15:00:13",
+        "marketplace_store_offer": false,
+        "categories": "Finance",
+        "countries": "Malaysia",
+        "commissions": [
+          {
+            "Commission": "MYR35.00"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.io/aff_m?offer_id=104013&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "manual",
+        "tracking_type": "ios android",
+        "directory_page": "https://app.involve.asia/directory/uob-casa-affiliate-program"
       }
     }
   ]
