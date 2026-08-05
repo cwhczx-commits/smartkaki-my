@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-04T10:59:58.077172+00:00",
-  "offer_count": 15,
+  "updated_at": "2026-08-05T10:17:53.899644+00:00",
+  "offer_count": 16,
   "coupon_count": 0,
   "deals": [
     {
@@ -278,7 +278,7 @@
         "lookup_value": "cps",
         "validation_terms": 21,
         "payment_terms": 45,
-        "datetime_updated": "2026-07-06 09:33:50",
+        "datetime_updated": "2026-08-05 11:41:40",
         "datetime_created": "2025-01-09 11:31:08",
         "marketplace_store_offer": false,
         "categories": "Electronics",
@@ -575,6 +575,55 @@
         "commission_tracking": "real-time",
         "tracking_type": "desktop mobile ios android",
         "directory_page": "https://app.involve.asia/directory/shopee-malaysia-cps-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 5130,
+      "name": "OPPO TH - CPS",
+      "commission": "Up to 5%",
+      "country": "Thailand",
+      "category": "Electronics",
+      "image": "https://img.involve.asia/ia_logo/5119_L6GL7aR3.jpg",
+      "url": "https://invl.us/aff_m?offer_id=103976&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "OPPO THAILAND OPPO is a global brand committed to delivering intelligent technology products and services tailored to individual needs. With its organic, minimalist design and seamless, smart user experience, OPPO...",
+      "_raw": {
+        "offer_id": 5130,
+        "merchant_id": 103976,
+        "offer_name": "OPPO TH - CPS",
+        "preview_url": "https://www.oppo.com/th/store",
+        "is_require_approval": 1,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/5119_L6GL7aR3.jpg",
+        "lookup_value": "cps",
+        "validation_terms": 40,
+        "payment_terms": 10,
+        "datetime_updated": "2026-07-28 18:03:18",
+        "datetime_created": "2026-05-08 10:42:33",
+        "marketplace_store_offer": false,
+        "categories": "Electronics",
+        "countries": "Thailand",
+        "commissions": [
+          {
+            "OPPO Find X9, OPPO Reno15 Pro Max 5G, OPPO Reno15 5G, OPPO Reno15 F": "4%"
+          },
+          {
+            "OPPO Reno16 Series": "5%"
+          },
+          {
+            "OPPO A6t, OPPO A6t Pro": "3%"
+          },
+          {
+            "All other": "2%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.us/aff_m?offer_id=103976&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile",
+        "directory_page": "https://app.involve.asia/directory/oppo-thailand-affiliate-program"
       }
     },
     {
