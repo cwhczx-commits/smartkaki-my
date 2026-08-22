@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T03:37:59.731892+00:00",
+  "updated_at": "2026-08-22T03:24:44.652929+00:00",
   "offer_count": 16,
   "coupon_count": 0,
   "deals": [
@@ -557,7 +557,7 @@
         "lookup_value": "cps",
         "validation_terms": 90,
         "payment_terms": 45,
-        "datetime_updated": "2026-07-02 10:40:22",
+        "datetime_updated": "2026-08-21 15:00:12",
         "datetime_created": "2025-12-15 11:12:09",
         "marketplace_store_offer": false,
         "categories": "Marketplace",
