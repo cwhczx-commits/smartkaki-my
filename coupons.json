@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-26T03:59:42.763822+00:00",
-  "offer_count": 16,
+  "updated_at": "2026-08-28T06:57:39.985517+00:00",
+  "offer_count": 17,
   "coupon_count": 0,
   "deals": [
     {
@@ -213,6 +213,49 @@
         "commission_tracking": "real-time",
         "tracking_type": "desktop mobile",
         "directory_page": "https://app.involve.asia/directory/poney-malaysia-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 4619,
+      "name": "Airalo Codes (Global) - CPS",
+      "commission": "Up to 14%",
+      "country": "International",
+      "category": "Others",
+      "image": "https://img.involve.asia/ia_logo/4619_VrM5ESmS.png",
+      "url": "https://invl.me/aff_m?offer_id=103465&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "Airalo is the world's first eSIM store that solves the pain of high roaming bills by giving you access to eSIMs (digital SIM cards) for 200+ countries and regions around the world at affordable prices. Airalo's mission...",
+      "_raw": {
+        "offer_id": 4619,
+        "merchant_id": 103465,
+        "offer_name": "Airalo Codes (Global) - CPS",
+        "preview_url": "https://www.airalo.com/",
+        "is_require_approval": 1,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/4619_VrM5ESmS.png",
+        "lookup_value": "cps",
+        "validation_terms": 37,
+        "payment_terms": 21,
+        "datetime_updated": "2026-01-01 00:04:29",
+        "datetime_created": "2024-11-27 12:08:35",
+        "marketplace_store_offer": false,
+        "categories": "Others",
+        "countries": "International",
+        "commissions": [
+          {
+            "Successful Code Conversion - NON-APAC": "7%"
+          },
+          {
+            "Successful Code Conversion - APAC specific only (Australia, Singapore, Japan, Korea, Philippines, Vietnam, Thailand, Malaysia, New Zealand, India, Indonesia, Hong Kong, Taiwan)": "14%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.me/aff_m?offer_id=103465&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "manual",
+        "tracking_type": "desktop mobile ios android",
+        "directory_page": "https://app.involve.asia/directory/airalo-global-affiliate-program"
       }
     },
     {
