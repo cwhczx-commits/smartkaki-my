@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T06:57:39.985517+00:00",
+  "updated_at": "2026-08-29T01:02:21.799675+00:00",
   "offer_count": 17,
   "coupon_count": 0,
   "deals": [
@@ -419,7 +419,7 @@
         "lookup_value": "cps",
         "validation_terms": 15,
         "payment_terms": 60,
-        "datetime_updated": "2026-08-01 00:02:01",
+        "datetime_updated": "2026-08-28 16:46:07",
         "datetime_created": "2025-02-10 11:20:02",
         "marketplace_store_offer": false,
         "categories": "Travel",
