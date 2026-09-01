@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31T01:02:15.249891+00:00",
+  "updated_at": "2026-09-01T01:03:56.704610+00:00",
   "offer_count": 17,
   "coupon_count": 0,
   "deals": [
@@ -400,7 +400,7 @@
       "source": "offer",
       "id": 4668,
       "name": "Traveloka MY - CPS",
-      "commission": "Up to 3.47%",
+      "commission": "Up to 5.6%",
       "country": "Malaysia",
       "category": "Travel",
       "image": "https://img.involve.asia/ia_logo/4668_uwuCcHvC.jpg",
@@ -419,7 +419,7 @@
         "lookup_value": "cps",
         "validation_terms": 15,
         "payment_terms": 60,
-        "datetime_updated": "2026-08-28 16:46:07",
+        "datetime_updated": "2026-09-01 08:57:58",
         "datetime_created": "2025-02-10 11:20:02",
         "marketplace_store_offer": false,
         "categories": "Travel",
@@ -432,7 +432,7 @@
             "International Flights": "0.95%"
           },
           {
-            "Hotel": "3.47%"
+            "Hotel": "5.6%"
           },
           {
             "Activities": "3.47%"
