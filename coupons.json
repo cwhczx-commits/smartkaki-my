@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T06:57:08.145624+00:00",
+  "updated_at": "2026-10-10T06:31:40.951766+00:00",
   "offer_count": 17,
   "coupon_count": 0,
   "deals": [
@@ -692,7 +692,7 @@
         "lookup_value": "cps",
         "validation_terms": 30,
         "payment_terms": 30,
-        "datetime_updated": "2026-10-01 00:00:48",
+        "datetime_updated": "2026-10-09 15:27:05",
         "datetime_created": "2026-06-10 18:27:28",
         "marketplace_store_offer": false,
         "categories": "Travel",
@@ -705,10 +705,10 @@
             "Attractions Pass (AP)": "5%"
           },
           {
-            "Tour & Sightseeing (OT)": "6%"
+            "Tour & Sightseeing (OT)": "8%"
           },
           {
-            "Activities & Experiences (AE)": "6%"
+            "Activities & Experiences (AE)": "8%"
           },
           {
             "Transport & Wifi (LT)": "5%"
@@ -717,7 +717,7 @@
             "Car Rentals (CR)": "5%"
           },
           {
-            "Hotel (HO)": "6%"
+            "Hotel (HO)": "5%"
           },
           {
             "Insurance (IR)": "5%"
@@ -741,16 +741,10 @@
             "Food & Dining (FB) - HK/MO users for domestic food coupons": "5%"
           },
           {
-            "Klook eSim": "20%"
+            "Klook eSim (within the list)": "20%"
           },
           {
-            "Universal Studios Japan Super Value Combo [AID 192375]": "6%"
-          },
-          {
-            "Global Trains (KR, JP, CN, EU) [AID 17136, 81022, 168765, 201665]": "3.5%"
-          },
-          {
-            "India-Origin [All Vertical, except Klook eSim & EA/SA]": "20%"
+            "India, UAE, Isreal [All Vertical, except Klook eSim & EA/SA]": "20%"
           }
         ],
         "special_commissions": [],
