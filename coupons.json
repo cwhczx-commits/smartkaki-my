@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T05:31:49.593003+00:00",
+  "updated_at": "2026-10-21T05:31:49.557504+00:00",
   "offer_count": 17,
   "coupon_count": 0,
   "deals": [
@@ -374,10 +374,7 @@
             "Hotel, Car Rental, Airport Transfer": "4.9%"
           },
           {
-            "Domestic Flights": "0.7%"
-          },
-          {
-            "International Flights": "1.4%"
+            "International Flights (Oct 21-31 Upsize)": "2.1%"
           },
           {
             "Attractions and Tours": "2.8%"
@@ -600,7 +597,7 @@
         "lookup_value": "cps",
         "validation_terms": 90,
         "payment_terms": 45,
-        "datetime_updated": "2026-10-06 14:37:33",
+        "datetime_updated": "2026-10-21 11:56:34",
         "datetime_created": "2025-12-15 11:12:09",
         "marketplace_store_offer": false,
         "categories": "Marketplace",
