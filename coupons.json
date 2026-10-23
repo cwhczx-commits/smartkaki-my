@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-22T05:35:07.140139+00:00",
-  "offer_count": 17,
+  "updated_at": "2026-10-23T05:33:39.207065+00:00",
+  "offer_count": 16,
   "coupon_count": 0,
   "deals": [
     {
@@ -749,46 +749,6 @@
         "commission_tracking": "real-time",
         "tracking_type": "desktop mobile ios android",
         "directory_page": "https://app.involve.asia/directory/klook-cps-affiliate-program"
-      }
-    },
-    {
-      "source": "offer",
-      "id": 5167,
-      "name": "UOB Bank CASA code (MY) - CPA",
-      "commission": "MYR35.00",
-      "country": "Malaysia",
-      "category": "Finance",
-      "image": "https://img.involve.asia/ia_logo/5167_KgzZ357u.png",
-      "url": "https://invl.io/aff_m?offer_id=104013&aff_id=1175846&source=ia_api_offer",
-      "voucher_code": null,
-      "end_date": null,
-      "summary": "About the Brand & Product UOB (Malaysia) is rated among the top banks in Malaysia with a long-term AAA rating from Ratings Agency of Malaysia. It has over seven decades of presence in the country, and operates 55...",
-      "_raw": {
-        "offer_id": 5167,
-        "merchant_id": 104013,
-        "offer_name": "UOB Bank CASA code (MY) - CPA",
-        "preview_url": "https://www.uob.com.my/personal/tmrw/detect-mobile-os.html",
-        "is_require_approval": 1,
-        "currency": "MYR",
-        "logo": "https://img.involve.asia/ia_logo/5167_KgzZ357u.png",
-        "lookup_value": "cpa",
-        "validation_terms": 30,
-        "payment_terms": 60,
-        "datetime_updated": "2026-06-23 17:13:20",
-        "datetime_created": "2026-06-18 15:00:13",
-        "marketplace_store_offer": false,
-        "categories": "Finance",
-        "countries": "Malaysia",
-        "commissions": [
-          {
-            "Commission": "MYR35.00"
-          }
-        ],
-        "special_commissions": [],
-        "tracking_link": "https://invl.io/aff_m?offer_id=104013&aff_id=1175846&source=ia_api_offer",
-        "commission_tracking": "manual",
-        "tracking_type": "ios android",
-        "directory_page": "https://app.involve.asia/directory/uob-casa-affiliate-program"
       }
     }
   ]
