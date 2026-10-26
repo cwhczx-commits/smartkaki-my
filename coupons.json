@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T05:29:37.686398+00:00",
+  "updated_at": "2026-10-26T05:34:32.918827+00:00",
   "offer_count": 16,
   "coupon_count": 0,
   "deals": [
@@ -320,8 +320,8 @@
         "logo": "https://img.involve.asia/ia_logo/4651_DmoCogOW.png",
         "lookup_value": "cps",
         "validation_terms": 21,
-        "payment_terms": 45,
-        "datetime_updated": "2026-08-05 11:41:40",
+        "payment_terms": 120,
+        "datetime_updated": "2026-10-26 12:47:37",
         "datetime_created": "2025-01-09 11:31:08",
         "marketplace_store_offer": false,
         "categories": "Electronics",
@@ -597,7 +597,7 @@
         "lookup_value": "cps",
         "validation_terms": 90,
         "payment_terms": 45,
-        "datetime_updated": "2026-10-21 11:56:34",
+        "datetime_updated": "2026-10-26 11:28:56",
         "datetime_created": "2025-12-15 11:12:09",
         "marketplace_store_offer": false,
         "categories": "Marketplace",
