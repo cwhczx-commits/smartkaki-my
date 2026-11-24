@@ -1,51 +1,8 @@
 {
-  "updated_at": "2026-11-23T08:24:40.561661+00:00",
+  "updated_at": "2026-11-24T10:32:58.376326+00:00",
   "offer_count": 16,
   "coupon_count": 0,
   "deals": [
-    {
-      "source": "offer",
-      "id": 2381,
-      "name": "Watsons Malaysia",
-      "commission": "Up to 1.96%",
-      "country": "Malaysia",
-      "category": "Health & Beauty",
-      "image": "https://img.involve.asia/ia_logo/1748_lJf0Phhc.jpg",
-      "url": "https://invl.me/aff_m?offer_id=101231&aff_id=1175846&source=ia_api_offer",
-      "voucher_code": null,
-      "end_date": null,
-      "summary": "Introduction Watsons Malaysia, a name synonymous with health and beauty, offers an enticing affiliate program that promises attractive commissions for promoting its vast range of products. Managed by Involve Asia, this...",
-      "_raw": {
-        "offer_id": 2381,
-        "merchant_id": 101231,
-        "offer_name": "Watsons Malaysia",
-        "preview_url": "https://www.watsons.com.my",
-        "is_require_approval": 1,
-        "currency": "MYR",
-        "logo": "https://img.involve.asia/ia_logo/1748_lJf0Phhc.jpg",
-        "lookup_value": "cps",
-        "validation_terms": 65,
-        "payment_terms": 65,
-        "datetime_updated": "2026-03-26 09:49:47",
-        "datetime_created": "2020-08-07 10:21:07",
-        "marketplace_store_offer": false,
-        "categories": "Health & Beauty",
-        "countries": "Malaysia",
-        "commissions": [
-          {
-            "E-Vouchers": "0%"
-          },
-          {
-            "Base Commission": "1.96%"
-          }
-        ],
-        "special_commissions": [],
-        "tracking_link": "https://invl.me/aff_m?offer_id=101231&aff_id=1175846&source=ia_api_offer",
-        "commission_tracking": "real-time",
-        "tracking_type": "desktop mobile ios android",
-        "directory_page": "https://app.involve.asia/directory/watsons-malaysia-affiliate-program"
-      }
-    },
     {
       "source": "offer",
       "id": 4028,
@@ -764,6 +721,46 @@
         "commission_tracking": "real-time",
         "tracking_type": "desktop mobile ios android",
         "directory_page": "https://app.involve.asia/directory/klook-cps-affiliate-program"
+      }
+    },
+    {
+      "source": "offer",
+      "id": 5226,
+      "name": "Watsons MY - CPS",
+      "commission": "Up to 17.5%",
+      "country": "Malaysia",
+      "category": "Health & Beauty",
+      "image": "https://img.involve.asia/ia_logo/5226_d6SzrrqC.png",
+      "url": "https://invl.us/aff_m?offer_id=104072&aff_id=1175846&source=ia_api_offer",
+      "voucher_code": null,
+      "end_date": null,
+      "summary": "About the Brand Watsons Malaysia is one of the leading health and beauty retailers, offering a wide range of skincare, cosmetics, personal care, health products, and wellness essentials. As part of the global AS Watson...",
+      "_raw": {
+        "offer_id": 5226,
+        "merchant_id": 104072,
+        "offer_name": "Watsons MY - CPS",
+        "preview_url": "https://www.watsons.com.my",
+        "is_require_approval": 0,
+        "currency": "USD",
+        "logo": "https://img.involve.asia/ia_logo/5226_d6SzrrqC.png",
+        "lookup_value": "cps",
+        "validation_terms": 42,
+        "payment_terms": 10,
+        "datetime_updated": "2026-10-28 22:57:18",
+        "datetime_created": "2026-09-29 14:57:02",
+        "marketplace_store_offer": false,
+        "categories": "Health & Beauty",
+        "countries": "Malaysia",
+        "commissions": [
+          {
+            "Sales": "Up to 17.50%"
+          }
+        ],
+        "special_commissions": [],
+        "tracking_link": "https://invl.us/aff_m?offer_id=104072&aff_id=1175846&source=ia_api_offer",
+        "commission_tracking": "real-time",
+        "tracking_type": "desktop mobile",
+        "directory_page": "https://app.involve.asia/directory/watsons-my-affiliate-program"
       }
     }
   ]
